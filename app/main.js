@@ -6,7 +6,7 @@ gestBuscarLivrosAPI();
 async function gestBuscarLivrosAPI(){
     const resposta = await fetch(endpointAPI);
     livros = await resposta.json();
-    console.table(livros);
-    exibirOsLivrosNaTela(livros);
+    let livrosComDesconto = aplicarDesconto(livros);
+    exibirOsLivrosNaTela(livrosComDesconto);
 }
 
